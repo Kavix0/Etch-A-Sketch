@@ -14,6 +14,7 @@ function renderGrid(numSquares){
         for(let j = 0; j < numSquares; j++){
             columnDiv = document.createElement("div");
             columnDiv.classList.add("gridSquare");
+            columnDiv.setAttribute("onmouseover", "randomColor(this)");
             rowDiv.appendChild(columnDiv);
         }
 
@@ -21,3 +22,8 @@ function renderGrid(numSquares){
         container.appendChild(rowDiv);
     }
 }
+
+randomColor = function(e) {
+    e.style.background =  "#" + (Math.random() * 0xFFFFFF<<0).toString(16);
+}
+
