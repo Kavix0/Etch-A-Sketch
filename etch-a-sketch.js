@@ -17,13 +17,26 @@ function renderGrid(numSquares){
             columnDiv.setAttribute("onmouseover", "randomColor(this)");
             rowDiv.appendChild(columnDiv);
         }
-
         console.log(rowDiv);
         container.appendChild(rowDiv);
     }
+
+    let div_list = document.querySelectorAll(".gridSquare");
+    let div_array = [...div_list];
+
+    div_array.forEach(div => {
+        div.setAttribute("onmouseover", "straightBlack(this)");
+    }); 
 }
 
 randomColor = function(e) {
     e.style.background =  "#" + (Math.random() * 0xFFFFFF<<0).toString(16);
 }
 
+straightBlack = function(e) {
+    e.style.background = "#000000";
+}
+
+shadesOfBlack = function(e) {
+    e.style.background = (0, 0, 0, 0);
+}
