@@ -6,29 +6,78 @@ html{
 
 body{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     height: 100vh;
 }
 
-#container{
+.content{
     display: flex;
-    flex:1;
+}
+
+.header{
+    display: flex;
+    flex: 1;
+}
+
+.footer{
+    flex: 1;
+}
+
+button{
+    font-size: 2rem;
     background-color: #F4F7F3;
-    max-width: 450px;
-    height: 450px;
-    margin: auto 0;
+    color: #1F151F;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    padding: .5rem 0rem;
+    margin: 0rem 1rem;
+    border-radius: 1rem;
+    border: 5px solid #BE3E52;
 }
 
-.gridSquare{
-    border: .5px solid black;
-    flex:1;
-    display: flex;
+button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.gridLine{
-    border: .5px solid black;
-    flex:1;
-    display: flex;
+#container{
+    display: grid;
+    background-color: #F4F7F3;
+    width: 500px;
+    height: 500px;
+    box-shadow: rgba(0,0,0, .24) 0px 3px 8px;
+    margin-right: 25%;
+}
+
+#selectorBox{
+    background-color: #1F151F;
+    flex: 1;
+    display:flex;
     flex-direction: column;
+    justify-content: space-around;
+    margin: 1.5rem 2rem;
+}
+
+.slideContainer{
+    width: 100%;
+}
+
+.slider{
+    -webkit-appearance: none;
+    appearance: none;
+    width:100%;
+    height:25px;
+    background: #d3d3d3;
+    outline:none;
+    opacity: .7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover{
+    opacity: 1; 
+}
+
+.gridElement{
+    user-select: none;
+    border: .5px solid #8597AC;
 }

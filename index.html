@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
     <script src="etch-a-sketch.js" defer></script>
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <div id = "selectorBox">
+    <header class = "header">
+    <div class = "title">Etch-A-Sketch</div>
+    </header>
 
+    <div class = "content">
+    <div id = "selectorBox">
+        <button class = "blackButton">Black</button>
+        <button class = "rainbowButton">Rainbow</button>
+        <button class = "eraser">Eraser</button>
+        <button class = "clear">Clear</button>
+        <div class = "slideContainer">
+            <input type ="range" min="16" max ="64" value ="16" class ="slider" id="myRange">
+        </div>
     </div>
 
     <div id = "container">
 
     </div>
+    </div>
+    <footer class = "footer">
+
+    </footer>
 </body>
 </html>

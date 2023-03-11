@@ -1,32 +1,34 @@
 const container = document.getElementById('container');
+let currentColor = 'straightBlack';
 
 let numSquares = (prompt("How many squares would you like in the grid?"));
 renderGrid(numSquares);
 
 function renderGrid(numSquares){
-    let rowDiv;
-    let columnDiv;
 
-    for(let i = 0; i < numSquares; i++){
-        rowDiv = document.createElement("div");
-        rowDiv.classList.add("gridLine");
+    let gridArea = numSquares * numSquares;
 
-        for(let j = 0; j < numSquares; j++){
-            columnDiv = document.createElement("div");
-            columnDiv.classList.add("gridSquare");
-            columnDiv.setAttribute("onmouseover", "randomColor(this)");
-            rowDiv.appendChild(columnDiv);
-        }
-        console.log(rowDiv);
-        container.appendChild(rowDiv);
+    container.style.gridTemplateColumns = `repeat(${numSquares}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${numSquares}, 1fr)`;
+
+    for(let i = 0; i < gridArea; i++){
+        let gridItem = document.createElement('div');
+        gridItem.classList.add('gridElement');
+        gridItem.addEventListener('mouseover', changeColor);
+        gridItem.addEventListener('mousedown', changeColor);
+        container.appendChild(gridItem);
     }
 
-    let div_list = document.querySelectorAll(".gridSquare");
+  /*  let div_list = document.querySelectorAll(".gridElement");
     let div_array = [...div_list];
 
     div_array.forEach(div => {
         div.setAttribute("onmouseover", "straightBlack(this)");
-    }); 
+    });*/
+}
+
+function changeColor(e) {
+    e.target.style.backgroundColor = "#000000";
 }
 
 randomColor = function(e) {
