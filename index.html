@@ -15,20 +15,27 @@
     </header>
 
     <div class = "content">
-    <div id = "selectorBox">
-        <button class = "blackButton">Black</button>
-        <button class = "rainbowButton">Rainbow</button>
-        <button class = "eraser">Eraser</button>
-        <button class = "clear">Clear</button>
-        <div class = "slideContainer">
-            <input type ="range" min="16" max ="64" value ="16" class ="slider" id="myRange">
+        <div class = "selectorContainer">
+            <div id = "selectorBox">
+                <button id = "blackButton">Black</button>
+                <button id = "rainbowButton">Rainbow</button>
+                <button id = "eraserButton">Eraser</button>
+                <button id = "clearButton">New Grid</button>
+                <div class = "sizeValue">16x16</div>
+                <div class = "slideContainer">
+                    <input type ="range" min="16" max ="64" value ="16" class ="slider" id="rangeValue">
+                </div>
+            </div>
         </div>
+
+        <div class = "container">
+            <div id = "container">
+            </div>
+        </div>
+
+        <div class = "spacer"></div>
     </div>
 
-    <div id = "container">
-
-    </div>
-    </div>
     <footer class = "footer">
 
     </footer>

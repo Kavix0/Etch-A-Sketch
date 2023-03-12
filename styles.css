@@ -1,6 +1,7 @@
 html{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     background-color: #1F151F;
 }
 
@@ -10,13 +11,32 @@ body{
     height: 100vh;
 }
 
+.active{
+    background-color: #1F151F;
+    color: #F4F7F3;
+    border: 5px solid #F4F7F3;
+}
+
 .content{
     display: flex;
+    justify-content: space-between;
+}
+
+.selectorContainer{
+    display: flex;
+    justify-content: center;
+    flex:1;
 }
 
 .header{
+    font-family: 'Montserrat', sans-serif;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
+    color: #F4F7F3;
+    font-size: 5rem;
+    user-select: none;
 }
 
 .footer{
@@ -24,15 +44,17 @@ body{
 }
 
 button{
+    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     background-color: #F4F7F3;
     color: #1F151F;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     padding: .5rem 0rem;
     margin: 0rem 1rem;
     border-radius: 1rem;
-    border: 5px solid #BE3E52;
+    border: 5px solid #1F151F;
+    max-width: 200px;
+    user-select: none;
 }
 
 button:hover{
@@ -42,19 +64,30 @@ button:hover{
 #container{
     display: grid;
     background-color: #F4F7F3;
-    width: 500px;
-    height: 500px;
+    width: calc(500px + 1rem);
+    height: calc(500px + 1rem);
     box-shadow: rgba(0,0,0, .24) 0px 3px 8px;
-    margin-right: 25%;
+    border: 1rem solid #BE3E52;
+
 }
 
 #selectorBox{
-    background-color: #1F151F;
+    background-color: #BE3E52;
     flex: 1;
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 1.5rem 2rem;
+    max-width: 200px;
+}
+
+.container{
+    display: flex;
+    flex:1;
+}
+
+.spacer{
+    display: flex;
+    flex: 1;
 }
 
 .slideContainer{
@@ -64,17 +97,27 @@ button:hover{
 .slider{
     -webkit-appearance: none;
     appearance: none;
-    width:100%;
+    max-width: 200px;
     height:25px;
     background: #d3d3d3;
     outline:none;
     opacity: .7;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    margin: 0rem 2rem;
 }
 
 .slider:hover{
     opacity: 1; 
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 2rem;
+    height: 2rem;
+    background-color: #ED3931;
+    border: 2px solid #1F151F;
+    position: relative;
 }
 
 .gridElement{
