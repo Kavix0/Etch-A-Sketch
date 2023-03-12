@@ -3,15 +3,19 @@ const sliderValue = document.getElementById('rangeValue');
 const blackButton = document.getElementById('blackButton');
 const rainbowButton = document.getElementById('rainbowButton');
 const eraserButton = document.getElementById('eraserButton');
+const sizeValue = document.getElementById('sizeValue');
 
 let currentColor = 'blackButton';
 let numSquares = sliderValue.value;
-let mouseClicked = false;
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
 
 renderGrid(numSquares);
 
 sliderValue.oninput = function(){
     numSquares = sliderValue.value;
+    sizeValue.innerHTML = `${numSquares} x ${numSquares}`;
 }
 
 blackButton.onmousedown = function(){
@@ -57,29 +61,13 @@ function renderGrid(){
         let gridItem = document.createElement('div');
         gridItem.classList.add('gridElement');
         gridItem.addEventListener('mouseover', changeColor);
-        gridItem.addEventListener('mousedown', mouseDown, changeColor);
-        gridItem.addEventListener('mouseup', mouseUp);
+        gridItem.addEventListener('mousedown', changeColor)
         container.appendChild(gridItem);
     }
-
-  /*  let div_list = document.querySelectorAll(".gridElement");
-    let div_array = [...div_list];
-
-    div_array.forEach(div => {
-        div.setAttribute("onmouseover", "straightBlack(this)");
-    });*/
-}
-
-function mouseDown(e){
-    mouseClicked = true;
-}
-
-function mouseUp(e){
-    mouseClicked = false;
 }
 
 function changeColor(e) {
-    if(!mouseClicked) return;
+    if(!mouseDown && e.type === 'mouseover') return;
 
     if(currentColor == 'blackButton') e.target.style.background = "#000000";
     else if (currentColor == 'rainbowButton') e.target.style.background =  "#" + (Math.random() * 0xFFFFFF<<0).toString(16);

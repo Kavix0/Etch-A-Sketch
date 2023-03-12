@@ -28,6 +28,18 @@ body{
     flex:1;
 }
 
+#sizeValue{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    color: #F4F7F3;
+    font-size: 1rem;
+    align-self: center;
+    border: 2px solid #F4F7F3;
+    padding: 0rem 1rem;
+    border-radius: 1rem;
+    user-select: none;
+}
+
 .header{
     font-family: 'Montserrat', sans-serif;
     display: flex;
@@ -68,7 +80,6 @@ button:hover{
     height: calc(500px + 1rem);
     box-shadow: rgba(0,0,0, .24) 0px 3px 8px;
     border: 1rem solid #BE3E52;
-
 }
 
 #selectorBox{
@@ -122,5 +133,4 @@ button:hover{
 
 .gridElement{
     user-select: none;
-    border: .5px solid #8597AC;
 }
