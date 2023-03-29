@@ -13,7 +13,7 @@ document.body.onmouseup = () => (mouseDown = false);
 
 renderGrid(numSquares);
 
-sliderValue.oninput = function(){
+sliderValue.onmousemove = function(){
     numSquares = sliderValue.value;
     sizeValue.innerHTML = `${numSquares} x ${numSquares}`;
 }
